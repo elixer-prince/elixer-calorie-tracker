@@ -7,6 +7,7 @@
     /* Colours */
     --color-bg: hsl(0, 0%, 8%);
     --color-text: hsl(0, 0%, 98%);
+    --color-success: hsl(84, 99%, 57%);
     --color-danger: hsl(3, 85%, 46%);
     --color-warning: hsl(43, 100%, 46%);
 
@@ -14,7 +15,7 @@
     --text-h1: 1.25rem;
 
     /* Border Radii */
-    --fully-rounded: 2rem;
+    --fully-rounded: 0.25rem;
 }
 
 @layer resets {
@@ -83,6 +84,11 @@
         gap: 1rem;
     }
 
+    .calorie-section__total-value {
+        font-size: var(--text-h1);
+        font-weight: bold;
+    }
+
     .calorie-section__controls {
         display: flex;
         gap: 0.5rem;
@@ -113,7 +119,7 @@
     }
 
     .calorie-section__show-controls-btn {
-        border-radius: 2rem;
+        border-radius: var(--fully-rounded);
     }
 
     .calorie-section__update-btn {
@@ -148,5 +154,13 @@
 @layer utils {
     .hidden {
         display: none;
+    }
+
+    .deficit {
+        color: var(--color-danger);
+    }
+
+    .sufficient {
+        color: var(--color-success);
     }
 }
