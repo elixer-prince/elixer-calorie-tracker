@@ -1,0 +1,25 @@
+{
+  "name": "elixer-calorie-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elixer-prince/elixer-calorie-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/elixer-prince/elixer-calorie-tracker/issues"
+  },
+  "homepage": "https://github.com/elixer-prince/elixer-calorie-tracker#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
