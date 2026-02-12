@@ -1,50 +1,42 @@
-/*=================================================
-                    HTML ELEMENTS
-=================================================*/
-
+"use strict";
 const totalCaloriesDisplay = document.querySelector("[data-total-calories]");
 const calorieInput = document.querySelector("#calorie-input");
-const showCalorieUpdateButton = document.querySelector(
-    "#show-calorie-update-btn"
-);
+const showCalorieUpdateButton = document.querySelector("#show-calorie-update-btn");
 const updateCalorieTotalButton = document.querySelector("#calorie-update-btn");
 const resetCalorieButton = document.querySelector("#calorie-reset-btn");
 const cancelUpdateButton = document.querySelector("#cancel-update-btn");
-
-/*=================================================
-                    VALUES
-=================================================*/
-
-const caloriesAlreadyConsumed =
-    JSON.parse(localStorage.getItem("totalCaloriesConsumedToday")) || 0;
+/*--------------------------------------------
+| VARIABLES
+|---------------------------------------------
+|
+*/
+const caloriesAlreadyConsumed = JSON.parse(localStorage.getItem("totalCaloriesConsumedToday")) || 0;
 const calorieDailyLimit = 100;
-
-/*=================================================
-                INITIALISATION
-=================================================*/
-
+/*--------------------------------------------
+| INITIALISATION
+|---------------------------------------------
+|
+*/
 updateCalorieDisplayColour(caloriesAlreadyConsumed, calorieDailyLimit);
-
-totalCaloriesDisplay.textContent = JSON.parse(
-    localStorage.getItem("totalCaloriesConsumedToday")
-);
-
-/*=================================================
-                EVENT LISTENERS
-=================================================*/
-
+totalCaloriesDisplay.textContent = JSON.parse(localStorage.getItem("totalCaloriesConsumedToday"));
+/*--------------------------------------------
+| EVENT LISTENERS
+|---------------------------------------------
+|
+*/
 calorieInput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") updateCalorieTotal();
+    if (event.key === "Enter")
+        updateCalorieTotal();
 });
 showCalorieUpdateButton.addEventListener("click", () => showCalorieUpdate());
 updateCalorieTotalButton.addEventListener("click", () => updateCalorieTotal());
 resetCalorieButton.addEventListener("click", () => resetCalorieTotal());
 cancelUpdateButton.addEventListener("click", () => cancelCalorieUpdate());
-
-/*=================================================
-                    FUNCTIONS
-=================================================*/
-
+/*--------------------------------------------
+| EVENT LISTENERS
+|---------------------------------------------
+|
+*/
 function showCalorieUpdate() {
     showCalorieUpdateButton.classList.add("hidden");
     calorieInput.classList.remove("hidden");
@@ -52,7 +44,6 @@ function showCalorieUpdate() {
     resetCalorieButton.classList.remove("hidden");
     cancelUpdateButton.classList.remove("hidden");
 }
-
 function cancelCalorieUpdate() {
     showCalorieUpdateButton.classList.remove("hidden");
     calorieInput.classList.add("hidden");
@@ -60,48 +51,34 @@ function cancelCalorieUpdate() {
     resetCalorieButton.classList.add("hidden");
     cancelUpdateButton.classList.add("hidden");
 }
-
 function resetCalorieTotal() {
     const caloriesAlreadyConsumed = Number(totalCaloriesDisplay.textContent);
-
-    if (caloriesAlreadyConsumed <= 0) return alert("You ate nothing yet!");
-
+    if (caloriesAlreadyConsumed <= 0)
+        return alert("You ate nothing yet!");
     if (confirm("Are you sure you want to reset your total calories?")) {
         updateCalorieDisplayColour(0, calorieDailyLimit);
         totalCaloriesDisplay.textContent = String(0);
         localStorage.setItem("totalCaloriesConsumedToday", JSON.stringify(0));
     }
 }
-
-function updateCalorieDisplayColour(
-    caloriesAlreadyConsumed,
-    calorieDailyLimit
-) {
+function updateCalorieDisplayColour(caloriesAlreadyConsumed, calorieDailyLimit) {
     if (caloriesAlreadyConsumed < calorieDailyLimit) {
         totalCaloriesDisplay.classList.add("deficit");
         totalCaloriesDisplay.classList.remove("sufficient");
         return;
     }
-
     totalCaloriesDisplay.classList.add("sufficient");
     totalCaloriesDisplay.classList.remove("deficit");
 }
-
 function updateCalorieTotal() {
     let caloriesAlreadyConsumed = Number(totalCaloriesDisplay.textContent);
     const caloriesToAdd = Number(calorieInput.value);
     const totalCaloriesConsumedToday = caloriesAlreadyConsumed + caloriesToAdd;
-
     if (caloriesToAdd <= 0)
         return alert("Input calories must be greater than zero!");
-
     totalCaloriesDisplay.textContent = String(totalCaloriesConsumedToday);
     caloriesAlreadyConsumed = Number(totalCaloriesDisplay.textContent);
-
     updateCalorieDisplayColour(caloriesAlreadyConsumed, calorieDailyLimit);
     calorieInput.value = null;
-    localStorage.setItem(
-        "totalCaloriesConsumedToday",
-        JSON.stringify(totalCaloriesConsumedToday)
-    );
+    localStorage.setItem("totalCaloriesConsumedToday", JSON.stringify(totalCaloriesConsumedToday));
 }
