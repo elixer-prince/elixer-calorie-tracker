@@ -1,28 +1,32 @@
 {
   "name": "elixer-calorie-tracker",
-  "version": "2.0.1",
-  "description": "",
-  "main": "index.js",
+  "homepage": "https://github.com/elixer-prince/elixer-calorie-tracker#readme",
+  "main": "./dist/js/index.js",
+  "version": "2.0.1-PLACEHOLDER",
+  "author": "Elixer Prince <elixerprince@gmail.com>",
+  "description": "A basic website to track my calories consumed per day.",
+  "keywords": [
+    "calories",
+    "tracker",
+    "website"
+  ],
+  "license": "ISC",
+  "type": "module",
   "scripts": {
     "test": "vitest",
     "test:ui": "vitest --ui",
     "release": "standard-version"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elixer-prince/elixer-calorie-tracker.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/elixer-prince/elixer-calorie-tracker/issues"
-  },
-  "homepage": "https://github.com/elixer-prince/elixer-calorie-tracker#readme",
   "devDependencies": {
     "standard-version": "^9.5.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elixer-prince/elixer-calorie-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elixer-prince/elixer-calorie-tracker/issues"
   }
 }
