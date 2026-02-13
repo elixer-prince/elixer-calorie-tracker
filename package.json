@@ -2,7 +2,7 @@
   "name": "elixer-calorie-tracker",
   "homepage": "https://github.com/elixer-prince/elixer-calorie-tracker#readme",
   "main": "./dist/js/index.js",
-  "version": "2.0.1-PLACEHOLDER",
+  "version": "0.0.0-PLACEHOLDER",
   "author": "Elixer Prince <elixerprince@gmail.com>",
   "description": "A basic website to track my calories consumed per day.",
   "keywords": [
