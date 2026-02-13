@@ -1,0 +1,8 @@
+%button {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition:
+    background-color 0.5s,
+    color 0.5s;
+}

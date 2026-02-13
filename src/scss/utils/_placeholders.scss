@@ -1,0 +1,50 @@
+@use "variables" as v;
+
+%flex {
+  display: flex;
+}
+
+%flex-row {
+  flex-direction: row;
+}
+
+%flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+%font-bold {
+  font-weight: bold;
+}
+
+%font-italic {
+  font-style: italic;
+}
+
+%hidden {
+  display: none;
+}
+
+%text-center {
+  text-align: center;
+}
+
+%text-right {
+  text-align: right;
+}
+
+%text-left {
+  text-align: left;
+}
+
+%text-h1 {
+  font-size: v.$text-h1;
+}
+
+%no-border {
+  border: none;
+}
+
+%cursor-pointer {
+  cursor: pointer;
+}

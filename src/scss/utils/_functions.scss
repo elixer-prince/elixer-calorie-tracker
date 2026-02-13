@@ -1,0 +1,15 @@
+@use "sass:math";
+
+@function toRem($px) {
+  @if (math.is-unitless($px)) {
+    @return math.div($px, 16px) + rem;
+  }
+  @error "Argument must NOT provide a unit!";
+}
+
+@function toEm($px) {
+  @if (math.is-unitless($px)) {
+    @return math.div($px, 16px) + em;
+  }
+  @error "Argument must NOT provide a unit!";
+}
