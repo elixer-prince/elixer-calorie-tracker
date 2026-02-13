@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/elixer-prince/elixer-calorie-tracker/compare/v2.0.0...v2.0.1) (2026-02-13)
+
+
+### Bug Fixes
+
+* remove the irrelevant and broken paragraphs ([be6643d](https://github.com/elixer-prince/elixer-calorie-tracker/commit/be6643d16792c61bd8f2550beadeff6498ede989))
+
 ## [2.0.0](https://github.com/elixer-prince/elixer-calorie-tracker/compare/v1.1.0...v2.0.0) (2026-02-13)
 
 
