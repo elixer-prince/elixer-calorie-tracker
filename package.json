@@ -15,9 +15,12 @@
   "scripts": {
     "test": "vitest",
     "test:ui": "vitest --ui",
+    "sass:build": "sass src/scss:dist/css --style=compressed --source-map",
+    "sass:watch": "sass --watch src/scss dist/scss",
     "release": "standard-version"
   },
   "devDependencies": {
+    "sass": "^1.97.3",
     "standard-version": "^9.5.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
