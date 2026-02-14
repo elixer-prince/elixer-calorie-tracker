@@ -20,6 +20,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
     "husky": "^9.1.7",
     "sass": "^1.97.3",
     "semantic-release": "^25.0.3",
@@ -32,8 +33,22 @@
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",
+      "@semantic-release/github",
       "@semantic-release/release-notes-generator",
-      "@semantic-release/github"
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md"
+          ]
+        }
+      ]
     ]
   },
   "repository": {
