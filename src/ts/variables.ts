@@ -1,0 +1,1 @@
+const calorieDailyLimit = 100;
