@@ -1,0 +1,16 @@
+%flex {
+  display: flex;
+}
+
+%flex-row {
+  flex-direction: row;
+}
+
+%flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-wrap {
+  flex-wrap: wrap;
+}
