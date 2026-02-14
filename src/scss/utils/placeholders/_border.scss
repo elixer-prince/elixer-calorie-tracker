@@ -1,8 +1,4 @@
-@use "variables" as *;
-
-.hidden {
-  display: none;
-}
+@use "./../variables" as *;
 
 %no-border {
   border: none;
