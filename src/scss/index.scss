@@ -7,85 +7,86 @@
   border: toRem(2) solid;
   gap: 1rem;
   padding: 1rem;
+
+  &__title {
+    @extend %font-bold;
+    @extend %text-h1;
+  }
 }
 
-.page-header__title {
-  @extend %font-bold;
-  @extend %text-h1;
-}
-
-.page-header__calorie-section {
+.calorie-section {
   @extend %flex-col;
   gap: 1rem;
-}
 
-.calorie-section__total-value {
-  @extend %font-bold;
-  @extend %text-h1;
-}
-
-.calorie-section__controls {
-  @extend %flex;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
-}
-
-.calorie-section__input-container {
-  @extend %flex;
-}
-
-.calorie-section__input {
-  @extend %no-border;
-  border-bottom-left-radius: $fully-rounded;
-  border-top-left-radius: $fully-rounded;
-  color: $color-bg;
-  padding: 0.5rem 1rem;
-}
-
-.calorie-section__show-controls-btn,
-.calorie-section__update-btn {
-  @extend %button;
-  @extend %no-border;
-  background-color: $color-warning;
-  color: $color-bg;
-
-  &:hover {
-    background-color: hsl(34, 96%, 48%);
+  &__total-value {
+    @extend %font-bold;
+    @extend %text-h1;
   }
-}
 
-.calorie-section__show-controls-btn {
-  @extend %button;
-  border-radius: $fully-rounded;
-}
-
-.calorie-section__update-btn {
-  @extend %button;
-  border-bottom-right-radius: $fully-rounded;
-  border-top-right-radius: $fully-rounded;
-}
-
-.calorie-section__reset-calories-btn {
-  @extend %button;
-  background-color: transparent;
-  border: 0.125rem solid $color-danger;
-  border-radius: $fully-rounded;
-  color: $color-danger;
-
-  &:hover {
-    background-color: $color-danger;
-    color: $color-text;
+  &__calorie-controls {
+    @extend %flex;
+    @extend %flex-wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
   }
-}
 
-.calorie-section__cancel-btn {
-  @extend %button;
-  background-color: transparent;
-  border: 0.125rem solid $color-text;
-  border-radius: $fully-rounded;
+  &__input-container {
+    @extend %flex;
+  }
 
-  &:hover {
-    background-color: $color-text;
+  &__input {
+    @extend %no-border;
+    border-bottom-left-radius: $fully-rounded;
+    border-top-left-radius: $fully-rounded;
     color: $color-bg;
+    padding: 0.5rem 1rem;
+  }
+
+  &__show-controls-btn,
+  &__update-btn {
+    @extend %button;
+    @extend %no-border;
+    background-color: $color-warning;
+    color: $color-bg;
+
+    &:hover {
+      background-color: hsl(34, 96%, 48%);
+    }
+  }
+
+  &__show-controls-btn {
+    @extend %button;
+    border-radius: $fully-rounded;
+  }
+
+  &__update-btn {
+    @extend %button;
+    border-bottom-right-radius: $fully-rounded;
+    border-top-right-radius: $fully-rounded;
+  }
+
+  &__reset-calories-btn {
+    @extend %button;
+    background-color: transparent;
+    border: 0.125rem solid $color-danger;
+    border-radius: $fully-rounded;
+    color: $color-danger;
+
+    &:hover {
+      background-color: $color-danger;
+      color: $color-text;
+    }
+  }
+
+  &__cancel-btn {
+    @extend %button;
+    background-color: transparent;
+    border: 0.125rem solid $color-text;
+    border-radius: $fully-rounded;
+
+    &:hover {
+      background-color: $color-text;
+      color: $color-bg;
+    }
   }
 }

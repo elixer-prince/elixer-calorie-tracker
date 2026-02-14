@@ -1,4 +1,4 @@
-@use "variables" as v;
+@use "variables" as *;
 
 %flex {
   display: flex;
@@ -38,7 +38,7 @@
 }
 
 %text-h1 {
-  font-size: v.$text-h1;
+  font-size: $text-h1;
 }
 
 %no-border {
@@ -47,4 +47,12 @@
 
 %cursor-pointer {
   cursor: pointer;
+}
+
+%flex-wrap {
+  flex-wrap: wrap;
+}
+
+%border {
+  border: 0.125rem solid $color-text;
 }
