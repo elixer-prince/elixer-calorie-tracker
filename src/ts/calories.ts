@@ -1,16 +1,19 @@
-const totalCaloriesDisplay: HTMLSpanElement | null = document.querySelector(
+import { getElementOrThrow } from "./helpers/utils";
+
+const totalCaloriesDisplay = getElementOrThrow<HTMLSpanElement>(
   "[data-total-calories]",
 );
-const calorieInput: HTMLInputElement | null =
-  document.querySelector("#calorie-input");
-const showCalorieUpdateButton: HTMLButtonElement | null =
-  document.querySelector("#show-calorie-update-btn");
-const updateCalorieTotalButton: HTMLButtonElement | null =
-  document.querySelector("#calorie-update-btn");
-const resetCalorieButton: HTMLButtonElement | null =
-  document.querySelector("#calorie-reset-btn");
-const cancelUpdateButton: HTMLButtonElement | null =
-  document.querySelector("#cancel-update-btn");
+const calorieInput = getElementOrThrow<HTMLInputElement>("#calorie-input");
+const showCalorieUpdateButton = getElementOrThrow<HTMLButtonElement>(
+  "#show-calorie-update-btn",
+);
+const updateCalorieTotalButton = getElementOrThrow<HTMLButtonElement>(
+  "#calorie-update-btn",
+);
+const resetCalorieButton =
+  getElementOrThrow<HTMLButtonElement>("#calorie-reset-btn");
+const cancelUpdateButton =
+  getElementOrThrow<HTMLButtonElement>("#cancel-update-btn");
 
 /*--------------------------------------------
 | VARIABLES
@@ -18,9 +21,11 @@ const cancelUpdateButton: HTMLButtonElement | null =
 |
 */
 
-const caloriesAlreadyConsumed =
-  JSON.parse(localStorage.getItem("totalCaloriesConsumedToday")) || 0;
 const calorieDailyLimit = 100;
+
+const caloriesAlreadyConsumed = JSON.parse(
+  localStorage.getItem("totalCaloriesConsumedToday") || "0",
+);
 
 /*--------------------------------------------
 | INITIALISATION
@@ -31,7 +36,7 @@ const calorieDailyLimit = 100;
 updateCalorieDisplayColour(caloriesAlreadyConsumed, calorieDailyLimit);
 
 totalCaloriesDisplay.textContent = JSON.parse(
-  localStorage.getItem("totalCaloriesConsumedToday"),
+  localStorage.getItem("totalCaloriesConsumedToday") || "0",
 );
 
 /*--------------------------------------------
@@ -43,6 +48,7 @@ totalCaloriesDisplay.textContent = JSON.parse(
 calorieInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") updateCalorieTotal();
 });
+
 showCalorieUpdateButton.addEventListener("click", () => showCalorieUpdate());
 updateCalorieTotalButton.addEventListener("click", () => updateCalorieTotal());
 resetCalorieButton.addEventListener("click", () => resetCalorieTotal());
@@ -83,8 +89,8 @@ function resetCalorieTotal() {
 }
 
 function updateCalorieDisplayColour(
-  caloriesAlreadyConsumed,
-  calorieDailyLimit,
+  caloriesAlreadyConsumed: number,
+  calorieDailyLimit: number,
 ) {
   if (caloriesAlreadyConsumed < calorieDailyLimit) {
     totalCaloriesDisplay.classList.add("deficit");
@@ -108,7 +114,7 @@ function updateCalorieTotal() {
   caloriesAlreadyConsumed = Number(totalCaloriesDisplay.textContent);
 
   updateCalorieDisplayColour(caloriesAlreadyConsumed, calorieDailyLimit);
-  calorieInput.value = null;
+  calorieInput.value = "";
   localStorage.setItem(
     "totalCaloriesConsumedToday",
     JSON.stringify(totalCaloriesConsumedToday),
