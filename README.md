@@ -11,3 +11,4 @@ This website is just a basic website I created to track my calories. Ignore the 
 - I was able to practice semantic versioning and automatic changelogs using the standard-version package.
 - I was able to practice how to set up the semantic-version package instead since it allows for greater control and automation. It was hard to setup but momma raised no quitter!
 - I was able to learn how to write unit tests using Vite.
+- I was able to learn how to practice how to professionally use Git.
